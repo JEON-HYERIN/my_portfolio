@@ -5,6 +5,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Clashgrotesk';
   src: url('../fonts/652543d0be446ec35a6e2547_ClashGrotesk-Bold.woff') format('woff');
@@ -12,6 +13,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Clashgrotesk';
   src: url('../fonts/652543d0c39816cbb3288594_ClashGrotesk-Medium.woff') format('woff');
@@ -19,6 +21,7 @@
   font-style: normal;
   font-display: swap;
 }
+
 @font-face {
   font-family: 'Roobert';
   src: url('../fonts/65253e008b6c40e26642b4d4_Roobert-Regular.ttf') format('truetype');
@@ -26,3 +29,11 @@
   font-style: normal;
   font-display: swap;
 }
+
+@font-face {
+  font-family: 'Neue Montreal';
+  src: url('../fonts/PPNeueMontreal-Variable.ttf') format('truetype');
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@400&display=swap');

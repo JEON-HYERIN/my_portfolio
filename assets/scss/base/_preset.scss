@@ -2,12 +2,6 @@
   box-sizing: border-box;
 }
 
-button {
-  padding: 0;
-  cursor: pointer;
-  outline: none;
-}
-
 #wrap {
   min-width: 320px;
 }
@@ -32,9 +26,9 @@ html {
 }
 
 body {
-  font-family: 'Roobert, sans-serif';
+  font-family: 'Roobert', sans-serif;
   font-size: 14px;
-  line-height: 20px;
+  line-height: 1.42;
   color: $color-white;
   background-color: $color-black;
   &.is-loading {

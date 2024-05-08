@@ -61,3 +61,8 @@ input, select, button {
   border: 0;
   background: transparent;
 }
+button {
+  padding: 0;
+  cursor: pointer;
+  outline: none;
+}

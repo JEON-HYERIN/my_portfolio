@@ -9,410 +9,66 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: $color-primary;
+  background-color: $color-dark-black;
 }
 
 // visual
 .section-visual {
-  position: relative;
-  height: 100vh;
-  min-height: 550px;
-  overflow: hidden;
-
-  @media (max-width: 700px) and (orientation: landscape) {
-    min-height: 650px;
-  }
-
   .common-inner {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-  }
-
-  &__content {
-    position: relative;
     display: flex;
-    align-items: center;
-    height: 100%;
+    flex-direction: column;
+    row-gap: 200px;
+    padding-top: 175px;
+    @include desktop-large {
+      padding-top: 200px;
+    }
   }
-
   &__headline {
-    display: flex;
-    flex-direction: column;
-    column-gap: 1.25rem;
-    width: 100%;
-    padding-bottom: 10vh;
-    font-size: 15vw;
-    font-weight: 500;
-    line-height: 1.05;
-
-    @include not-mobile {
-      flex-direction: row;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      column-gap: 0;
-      padding-bottom: 0;
-      margin-left: -1.25rem;
-      font-size: 12vw;
-      line-height: 1.25;
-    }
-
-    @include desktop {
-      font-size: 10.5rem;
-    }
-
-    .word-wrapper {
-      overflow: hidden;
-
-      @include not-mobile {
-        &:nth-child(1) {
-          width: 66.6666666667%;
-        }
-
-        &:nth-child(2) {
-          width: 33.3333333333%;
-        }
-
-        &:nth-child(3) {
-          min-width: 50%;
-        }
-      }
-    }
-  }
-
-  &__body {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 1.5rem;
-    width: 100%;
-    padding-bottom: 1.25rem;
-
-    @media (min-width: 700px) {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: flex-end;
-      padding-bottom: 3.125rem;
-    }
-  }
-
-  &__textbox {
-    display: flex;
-    flex-direction: column;
-    row-gap: .625rem;
-
-    @include not-mobile {
-      width: 33.3333333333%;
-    }
-  }
-
-  &__title {
-    font-size: 1.6rem;
+    font-family: 'Clashgrotesk', sans-serif;
     font-weight: 400;
+    font-size: 110px;
     line-height: 1;
-  }
-
-  &__description {
-    display: flex;
-    flex-direction: column;
-    row-gap: .2rem;
-
-    .english {
-      font-size: 1rem;
-    }
-
-    .korean {
-      font-size: .8rem;
-      font-weight: 300;
+    @include desktop-large {
+      font-size: 140px;
     }
   }
-
-  &__arrow {
-    font-size: 150%;
-    transition: transform .6s cubic-bezier(.075, .82, .165, 1);
-
-    .section-visual__link:hover & {
-      transform: translate(.3125rem);
-    }
-  }
-
-  &__scroll {
-    &:hover {
-      opacity: .5;
-    }
-
-    span {
-      display: block;
-    }
-  }
-
-  &__background {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    min-height: inherit;
-    pointer-events: none;
-
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-    }
-  }
-}
-
-// work
-.section-work {
-  position: relative;
-  padding-bottom: 7.5rem;
-
-  @include not-mobile {
-    padding-bottom: 8.75rem;
-  }
-
   &__row {
-    &+& {
-      padding-top: 2.5rem;
-
-      @include not-mobile {
-        padding-top: 3.75rem;
-      }
-    }
-  }
-
-  &__list {
-    display: grid;
-    row-gap: 3.5rem;
-
-    @include not-mobile {
-      grid-template-columns: repeat(3, 1fr);
-      gap: 8.5rem 1.25rem;
-    }
-  }
-
-  &__item {
     display: flex;
-    flex-direction: column-reverse;
-    row-gap: .625rem;
-
-    @include not-mobile {
-      row-gap: 1.25rem;
+    column-gap: 20px;
+  }
+  .change-move {
+    height: 110px;
+    overflow: hidden;
+    @include desktop-large {
+      height: 140px;
+    }
+    &__inner {
+      display: flex;
+      flex-direction: column;
+    }
+    &__text {
+      color: $color-primary;
     }
   }
-
-  &__content {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    row-gap: 1.5rem;
-  }
-
   &__textbox {
     display: flex;
     flex-direction: column;
-    row-gap: .5rem;
-
-    @include desktop {
-      flex-direction: row;
-      justify-content: space-between;
-      align-items: center;
-      column-gap: 2rem;
-    }
+    row-gap: 20px;
+    width: 50%;
   }
-
-  &__title {
-    font-size: 1.375rem;
-    font-weight: 400;
-    line-height: 1.2;
+  &__name {
+    font-size: 16px;
+    line-height: 1.25;
+    color: $color-gray;
+    letter-spacing: 2px;
   }
-
-  &__hashtag {
-    display: flex;
-    column-gap: .4rem;
-    font-size: .9rem;
-    opacity: .4;
-  }
-
-  &__links {
-    display: flex;
-    align-items: center;
-    column-gap: .5rem;
-
-    @include desktop {
-      align-self: flex-end;
-    }
-  }
-
-  &__link {
-    position: relative;
-    display: flex;
-    justify-content: space-between;
-    column-gap: .2rem;
-    padding-bottom: 0.625rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
-    font-size: .8rem;
-
-    &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      border-bottom: 1px solid $color-white;
-      transform: scaleX(0);
-      transform-origin: right center;
-      transition: transform 0.6s cubic-bezier(0.075, 0.82, 0.165, 1);
-    }
-
-    &:hover::before {
-      transform: scale(1);
-      transform-origin: left center;
-    }
-  }
-
-  &__thumbnail {
-    position: relative;
-    border-radius: .375rem;
-    overflow: hidden;
-    background-color: $color-black;
-    transform: translateZ(0);
-    padding-top: 60%;
-
-    @include not-mobile {
-      $padding: 60%, 67%, 73%, 75%, 62%, 75%;
-
-      @for $i from 1 through 6 {
-        .section-work__item:nth-child(#{$i}) & {
-          padding-top: nth($padding, $i);
-        }
-      }
-    }
-
-    &:hover {
-      opacity: .75;
-    }
-
-    video,
-    img {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-  }
-
-  &__experience {
-    padding-top: .5rem;
-
-    @at-root .experience {
-      &__item {
-        &+& {
-          margin-top: -1px;
-        }
-      }
-
-      &__link {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        justify-content: space-between;
-        flex-direction: column;
-        row-gap: .6rem;
-        padding: 1.3rem 1.3rem 1.3rem 3.5rem;
-        border-width: 1px 0;
-        border-style: solid;
-        border-color: #767676;
-
-        @include not-mobile {
-          padding-top: $gutter-mobile;
-          padding-bottom: $gutter-mobile;
-          padding-right: $gutter-mobile;
-        }
-
-        &:hover {
-          color: $color-primary;
-          background-color: $color-white;
-        }
-      }
-
-      &__title {
-        font-size: 1.7rem;
-        font-weight: 500;
-        line-height: 1;
-
-        @include not-mobile {
-          font-size: $gutter-not-mobile;
-        }
-      }
-
-      &__body {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-end;
-        line-height: 1.1;
-      }
-
-      &__description {
-        display: flex;
-        flex-direction: column;
-        font-size: 1rem;
-      }
-
-      &__arrow {
-        font-size: 1.375rem;
-        transition: transform .6s cubic-bezier(.075, .82, .165, 1);
-
-        .experience__link:hover & {
-          transform: translate(.3125rem);
-        }
-      }
-
-      &__ribbon {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 5.3125rem;
-        height: 5.3125rem;
-        font-size: .75rem;
-        font-weight: 500;
-        color: $color-primary;
-        transform: rotate(-45deg);
-
-        span {
-          position: absolute;
-          top: .5rem;
-          left: 50%;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          height: $gutter-mobile;
-          width: 18.75rem;
-          margin-left: -9.375rem;
-          background-color: $color-white;
-        }
-
-        .experience__link:hover & {
-          color: $color-white;
-
-          span {
-            background-color: $color-primary;
-          }
-        }
-      }
+  &__description {
+    font-family: "Noto Sans KR", sans-serif;
+    font-size: 17px;
+    line-height: 1.7;
+    word-break: keep-all;
+    @include desktop-large {
+      width: 80%;
     }
   }
 }

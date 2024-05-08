@@ -1,53 +1,14 @@
 .common-inner {
-  max-width: 130rem;
-  margin: 0 auto;
-  padding-left: $gutter-mobile;
-  padding-right: $gutter-mobile;
+  padding-left: $gutter-desktop;
+  padding-right: $gutter-desktop;
 
-  @media (min-width: 700px) {
-    padding-left: $gutter-not-mobile;
-    padding-right: $gutter-not-mobile;
-  }
-}
-
-.common-headline {
-  margin: $gutter-not-mobile 0 2.1875rem;
-  padding-top: .9375rem;
-  border-top: 1px solid rgba(255, 255, 255, .4);
-
-  @media screen and (min-width: 700px) {
-    margin-bottom: 3.75rem;
+  @include mobile {
+    padding-left: $gutter-mobile;
+    padding-right: $gutter-mobile;
   }
 
-  span {
-    font-size: .8rem;
-    font-weight: 500;
-
-    &::before {
-      content: "\2b24";
-      display: inline-block;
-      margin-right: .625rem;
-      vertical-align: 3px;
-    }
+  @include mobile-small {
+    padding-left: $gutter-mobile-small;
+    padding-right: $gutter-mobile-small;
   }
-}
-
-.common-display-mo {
-  display: block;
-
-  @include desktop {
-    display: none;
-  }
-}
-
-.common-display-pc {
-  display: none;
-
-  @include desktop {
-    display: block;
-  }
-}
-
-.korean {
-  font-family: "Noto Sans KR", sans-serif;
 }

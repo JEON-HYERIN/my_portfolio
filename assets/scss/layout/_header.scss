@@ -2,31 +2,19 @@
   position: fixed;
   top: 0;
   left: 0;
-  z-index: $z-index--header;
   width: 100%;
-  padding: 1.25rem 0;
-  font-size: 1rem;
-  font-weight: 500;
-  transition: padding .3s;
-
-  @include desktop {
-    padding: 1.875rem 0;
-  }
-
-  &.is-scrolled {
-    padding: .6875rem 0;
-    background-color: $color-primary;
-  }
-
   .common-inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: $gutter-desktop;
   }
-
   &__logo {
     a {
       display: block;
+      font-family: 'Neue Montreal';
+      font-size: 25px;
+      font-weight: 500;
     }
   }
 }
@@ -34,10 +22,16 @@
 .global-nav {
   &__list {
     display: flex;
-    column-gap: $gutter-not-mobile;
+    column-gap: 75px;
   }
 
   &__link {
     display: block;
+    font-size: 18px;
+    color: $color-gray;
+    transition: color .3s;
+    &:hover {
+      color: $color-white;
+    }
   }
 }

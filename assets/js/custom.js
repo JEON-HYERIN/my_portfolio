@@ -22,28 +22,28 @@ if (history.scrollRestoration) {
 const visualText = new SplitType('.section-visual__headline .word-wrapper', {types: 'words', tagName: 'span'});
 
 // loading
-const loadingTl = gsap.timeline({
-  // paused: true,
-  defaults: {
-    duration: .6,
-  },
-  onStart: function() {
-    document.body.classList.add('is-loading');
-    lenis.stop();
-  },
-  onComplete: function() {
-    lenis.start();
-  }
-});
-loadingTl
-.to('.loading', {yPercent: -100, delay: .5, duration: .6, onUpdate: function() {document.body.classList.remove('is-loading');}}, 'a')
-.set('.loading', {display: 'none'}, 'b')
-.from('.section-visual__background img', {y: '12.5rem', opacity: 0}, 'b')
-.from('.section-visual__headline .word', {yPercent: 150, opacity: 0, duration: .8, stagger: .12}, 'b')
-.from('.header__logo a', {y: '3.75rem', opacity: 0}, 'b+=.6')
-.from('.section-visual__textbox', {y: '3.75rem', opacity: 0}, 'b+=.7')
-.from('.global-nav__link', {y: '3.75rem', opacity: 0, stagger: .1}, 'b+=.8')
-.from('.section-visual__scroll span', {y: '3.75rem', opacity: 0}, 'b+=.8')
+// const loadingTl = gsap.timeline({
+//   // paused: true,
+//   defaults: {
+//     duration: .6,
+//   },
+//   onStart: function() {
+//     document.body.classList.add('is-loading');
+//     lenis.stop();
+//   },
+//   onComplete: function() {
+//     lenis.start();
+//   }
+// });
+// loadingTl
+// .to('.loading', {yPercent: -100, delay: .5, duration: .6, onUpdate: function() {document.body.classList.remove('is-loading');}}, 'a')
+// .set('.loading', {display: 'none'}, 'b')
+// .from('.section-visual__background img', {y: '12.5rem', opacity: 0}, 'b')
+// .from('.section-visual__headline .word', {yPercent: 150, opacity: 0, duration: .8, stagger: .12}, 'b')
+// .from('.header__logo a', {y: '3.75rem', opacity: 0}, 'b+=.6')
+// .from('.section-visual__textbox', {y: '3.75rem', opacity: 0}, 'b+=.7')
+// .from('.global-nav__link', {y: '3.75rem', opacity: 0, stagger: .1}, 'b+=.8')
+// .from('.section-visual__scroll span', {y: '3.75rem', opacity: 0}, 'b+=.8')
 
 // header
 window.addEventListener('scroll', function() {
@@ -71,27 +71,29 @@ navLinks.forEach(function(navLink) {
 });
 
 // visual
-const scrollBtn = document.querySelector('.section-visual__scroll');
-
-scrollBtn.addEventListener('click', () => {
-  lenis.scrollTo('#work');
+// const visualTl = gsap.timeline({
+//   defaults: {
+//     delay: .5,
+//   }
+// });
+// const visualTexts = document.querySelectorAll('.change-move__text');
+// visualTexts.forEach(function(visualText, index) {
+//   visualTl.to(visualText, {yPercent: -index * 100})
+// });
+const changeMoveEl = document.querySelector('.change-move');
+const changeMoveHeight = changeMoveEl.getBoundingClientRect().height;
+const changeMoveTl = gsap.timeline({
+    defaults: {
+    duration: .8,
+    delay: .5,
+    // ease: 'none'
+  },
+  repeat: -1
 });
-
-const visualTl = gsap.timeline({
-  scrollTrigger: {
-    trigger: '.section-visual',
-    start: 'center center',
-    end: '+=1200',
-    scrub: 0,
-    // markers: true,
-    onUpdate: function(self) {
-      const value = self.progress * 25;
-
-      visualTl.from('.section-visual__background img', {x: -value}, 'a');
-    }
-  }
-});
-visualTl.to('.section-visual__background', {opacity: 0}, 'a');
+const changeMoveTexts = document.querySelectorAll('.change-move__text');
+for(let i = 0; i < changeMoveTexts.length; i++) {
+  changeMoveTl.to('.change-move__inner', {y: changeMoveHeight * -i})
+}
 
 // matchMedia
 let mm = gsap.matchMedia();
@@ -123,15 +125,15 @@ mm.add("(min-width: 1000px)", () => {
 })
 
 // footer
-const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
-const date = new Date();
-const year = date.getFullYear();
-const month = date.getMonth();
-const yearEl = document.querySelector('.footer__year');
-const monthEl = document.querySelector('.footer__month');
+// const monthNames = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+// const date = new Date();
+// const year = date.getFullYear();
+// const month = date.getMonth();
+// const yearEl = document.querySelector('.footer__year');
+// const monthEl = document.querySelector('.footer__month');
 
-yearEl.textContent = year;
-monthEl.textContent = monthNames[month].substring(0, 3);
+// yearEl.textContent = year;
+// monthEl.textContent = monthNames[month].substring(0, 3);
 
 // cursor
 const cursor = document.querySelector('.cursor');
