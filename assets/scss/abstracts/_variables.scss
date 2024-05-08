@@ -1,0 +1,19 @@
+// gutter
+$gutter-mobile: 1.5625rem;
+$gutter-not-mobile: 2.5rem;
+
+// color
+$color-white: #fff;
+$color-black: #000;
+$color-primary: #cf0;
+$color-gray: rgba(255, 255, 255, .25);
+$color-light-gray: rgba(255, 255, 255, .05);
+$color-gray--opacity-50: rgba(255, 255, 255, .5);
+
+// border-radius
+$border-radius: 15px;
+
+// z-index
+$z-index--header: 9;
+$z-index--cursor: 10;
+$z-index--loading: 20;
